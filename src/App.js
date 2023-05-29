@@ -9,7 +9,7 @@ function App() {
     <Search />
     <div className="movies-section">
      {/* <!-- one card --> */}
-
+     <MovieCard />
      {/* <!-- one card --> */}
     </div>
    </div>
