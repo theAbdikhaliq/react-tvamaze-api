@@ -1,20 +1,24 @@
 import "../index.css";
-function MovieCard() {
+import Search from "./Search";
+
+function MovieCard({movie}) {
  return (
   <div className="movie-card">
    <div className="movie-image">
     <img
-     src="https://i.pinimg.com/originals/a2/34/75/a234753b69e3bd27b7f1d448956c38af.jpg"
+     src={movie.show.image.medium}
      alt="movie"
     />
    </div>
 
-   <h3 className="movie-heading">Breaking Bad</h3>
+   <h3 className="movie-heading">{movie.show.name}</h3>
+   {/* <p>{movie.show.type}</p> */}
    <ul className="list">
-    <li>Drama</li>
-    <li>Romace</li>
+    {movie.show.genres.map(genre => (
+    <li>{genre}</li>
+    ))}
    </ul>
-   <button>Watch Now</button>
+   <button><a href={movie.show.url}>Watch Now</a></button>
   </div>
  );
 }
